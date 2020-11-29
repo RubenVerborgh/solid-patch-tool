@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Solid Patch Tool</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+  <main>
+    <h1>Solid Patch Tool</h1>
+    <fieldset>
+      <ul>
+        <li>
+          <label for="target">Target</label>
+          <input id="target" value="http://localhost:3000/"/>
+        </li>
+        <li>
+          <label for="contentType">Content-Type</label>
+          <input id="contentType" value="application/sparql-update"/>
+        </li>
+        <li>
+          <label for="body">Body</label>
+          <textarea id="body">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+INSERT DATA {
+  &lt;http://example.org/&gt; rdfs:label "Example"@en.
+}</textarea>
+        </li>
+      </ul>
+      <p>
+        <button id="applyPatch">Apply patch</button>
+      </p>
+    </fieldset>
+  </main>
+</body>
+</html>
