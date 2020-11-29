@@ -48,3 +48,11 @@ button {
   padding: .5em 1em .33em;
   margin-left: 8em;
 }
+
+#responsePane {
+  display: none;
+}
+
+pre {
+  overflow: scroll;
+}

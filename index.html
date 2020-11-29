@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Solid Patch Tool</title>
   <link rel="stylesheet" href="main.css" type="text/css">
+  <script src="main.js" type="module"></script>
 </head>
 <body>
   <main>
@@ -31,6 +32,10 @@ INSERT DATA {
         <button id="applyPatch">Apply patch</button>
       </p>
     </fieldset>
+    <div id="responsePane">
+      <h2>Response: <code id="status"></code></h2>
+      <pre><code id="responseBody"></code></pre>
+    </div>
   </main>
 </body>
 </html>
