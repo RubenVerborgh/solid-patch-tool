@@ -1,6 +1,25 @@
+import { Session } from '@inrupt/solid-client-authn-browser'
+
+const session = new Session();
+
 // Collect elements by ID
 const elements = {};
 document.querySelectorAll('[id]').forEach(e => elements[e.id] = e);
+
+// Indicate the user's login status
+(async () => {
+  await session.handleIncomingRedirect(window.location.href);
+  history.replaceState(null, null, window.location.pathname);
+  elements.webId.textContent = session.info.webId || '(none)';
+})();
+
+// Log in on click
+elements.login.addEventListener('click', async () => {
+  await session.login({
+    oidcIssuer: 'https://broker.demo-ess.inrupt.com',
+    redirectUrl: window.location.href,
+  });
+});
 
 // Send the PATCH request on click
 elements.applyPatch.addEventListener('click', async () => {
@@ -16,7 +35,7 @@ elements.applyPatch.addEventListener('click', async () => {
 
   try {
     // Send the PATCH request
-    const response = await fetch(target.value, {
+    const response = await session.fetch(target.value, {
       method: 'PATCH',
       headers: {
         'Content-Type': contentType.value,

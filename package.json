@@ -1,0 +1,15 @@
+{
+  "name": "solid-patch-tool",
+  "private": true,
+  "scripts": {
+    "build": "webpack ./main.js",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@inrupt/solid-client-authn-browser": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
+  }
+}
