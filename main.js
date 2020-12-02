@@ -9,7 +9,6 @@ document.querySelectorAll('[id]').forEach(e => elements[e.id] = e);
 // Indicate the user's login status
 (async () => {
   await session.handleIncomingRedirect(window.location.href);
-  history.replaceState(null, null, window.location.pathname);
   elements.webId.textContent = session.info.webId || '(none)';
 })();
 
