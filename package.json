@@ -6,7 +6,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@inrupt/solid-client-authn-browser": "^1.1.0"
+    "@inrupt/solid-client-authn-browser": "^1.1.1"
   },
   "devDependencies": {
     "webpack": "^4.44.2",
